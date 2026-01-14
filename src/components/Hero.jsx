@@ -47,7 +47,7 @@ const Hero = () => {
                     className="flex-1 flex justify-center relative"
                     style={{ flex: 1, display: 'flex', justifyContent: 'center', position: 'relative' }}
                 >
-                    <div style={{ width: '400px', height: '400px', position: 'relative' }}>
+                    <div style={{ width: '400px', height: '400px', position: 'relative', marginTop: '-100px' }}>
                         <motion.div
                             animate={{ y: [0, -20, 0] }}
                             transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}

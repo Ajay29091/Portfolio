@@ -37,7 +37,7 @@ const Navbar = () => {
             }}>
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
                 <a href="#" className="text-2xl font-bold text-gray-800" style={{ fontSize: '1.5rem', fontWeight: '700', color: '#333' }}>
-                    Ajay Singh
+                    Ajay
                 </a>
 
                 {/* Desktop Menu */}
