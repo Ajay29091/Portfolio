@@ -15,7 +15,7 @@ const Projects = () => {
                     Featured Projects
                 </motion.h2>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px', justifyContent: 'center' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px', justifyContent: 'center' }}>
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}

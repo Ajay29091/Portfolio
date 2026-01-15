@@ -5,7 +5,7 @@ import { personalDetails } from '../data';
 const Hero = () => {
     return (
         <section id="hero" style={{ height: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: '80px' }}>
-            <div className="max-w-7xl mx-auto px-6 w-full flex flex-col-reverse md:flex-row items-center justify-between"
+            <div className="max-w-7xl mx-auto px-6 w-full reverse-stack-on-mobile"
                 style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px', display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'space-between' }}>
 
                 <motion.div
@@ -27,7 +27,7 @@ const Hero = () => {
                     <p style={{ fontSize: '1.1rem', color: '#666', marginBottom: '35px', maxWidth: '480px', lineHeight: '1.6' }}>
                         {personalDetails.tagline}
                     </p>
-                    <div style={{ display: 'flex', gap: '20px' }}>
+                    <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
                         <a href="#projects"
                             style={{ backgroundColor: '#A67B5B', color: 'white', padding: '14px 32px', borderRadius: '5px', fontWeight: '500', border: '2px solid #A67B5B' }}>
                             View Projects
@@ -47,12 +47,12 @@ const Hero = () => {
                     className="flex-1 flex justify-center relative"
                     style={{ flex: 1, display: 'flex', justifyContent: 'center', position: 'relative' }}
                 >
-                    <div style={{ width: '400px', height: '400px', position: 'relative', marginTop: '-100px' }}>
+                    <div style={{ width: '400px', height: '400px', maxWidth: '100%', position: 'relative', marginTop: '-50px' }}>
                         <motion.div
                             animate={{ y: [0, -20, 0] }}
                             transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
                             style={{
-                                position: 'absolute', width: '300px', height: '300px',
+                                position: 'absolute', width: '300px', height: '300px', maxWidth: '80%',
                                 backgroundColor: 'rgba(166, 123, 91, 0.1)', borderRadius: '50%',
                                 top: '50%', left: '50%', transform: 'translate(-50%, -50%)'
                             }}
@@ -61,7 +61,7 @@ const Hero = () => {
                             animate={{ y: [0, 20, 0] }}
                             transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
                             style={{
-                                position: 'absolute', width: '180px', height: '180px',
+                                position: 'absolute', width: '180px', height: '180px', maxWidth: '50%',
                                 border: '2px solid #A67B5B', borderRadius: '50%',
                                 top: '40%', left: '60%', opacity: 0.6
                             }}

@@ -97,3 +97,73 @@ button {
     margin: 10px auto 0;
     border-radius: 2px;
 }
+
+/* Responsive Utilities */
+.desktop-only {
+    display: flex !important;
+}
+
+.mobile-only {
+    display: none !important;
+}
+
+/* Tablet & Mobile Styles */
+@media (max-width: 1024px) {
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: block !important;
+    }
+
+    /* Layout Adjustments */
+    .stack-on-mobile {
+        flex-direction: column !important;
+    }
+
+    .reverse-stack-on-mobile {
+        flex-direction: column-reverse !important;
+    }
+
+    .grid-to-flex-mobile {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .contact-container {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 30px !important;
+        gap: 30px !important;
+    }
+
+    .timeline-item {
+        padding-left: 40px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-padding {
+        padding: 40px 15px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+}

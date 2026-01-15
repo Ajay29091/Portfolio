@@ -16,7 +16,7 @@ const Experience = () => {
                     Experience
                 </motion.h2>
 
-                <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
+                <div className="timeline-container" style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
                     {/* Vertical Line */}
                     <div style={{ position: 'absolute', left: '20px', top: 0, bottom: 0, width: '2px', background: '#ddd' }}></div>
 
@@ -26,6 +26,7 @@ const Experience = () => {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
+                            className="timeline-item"
                             style={{ paddingLeft: '60px', position: 'relative', marginBottom: '40px' }}
                         >
                             {/* Dot */}

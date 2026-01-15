@@ -41,8 +41,8 @@ const Navbar = () => {
                 </a>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center space-x-8" style={{ display: 'flex', gap: '30px' }}>
-                    <ul style={{ display: 'flex', gap: '30px' }} className="desktop-menu">
+                <div className="desktop-only items-center space-x-8" style={{ gap: '30px' }}>
+                    <ul style={{ display: 'flex', gap: '30px' }}>
                         {navLinks.map((link) => (
                             <li key={link.name}>
                                 <a href={link.href} className="text-sm font-medium text-gray-600 hover:text-accent transition-colors"
@@ -65,14 +65,8 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Hamburger */}
-                <div className="md:hidden mobile-toggle" style={{ display: 'none' }}>
-                    {/* Note: In a real CSS setup, we'd use media queries. Since I'm writing inline styles for safety where Tailwind is absent, 
-                        I'll add a class for mobile visibility logic in index.css or assume desktop first for now. 
-                        Actually, I'll add a quick media query style block in index.css later or rely on the class logic if Tailwind was present.
-                        Since I didn't install Tailwind, I will rely on standard CSS in index.css and just use classes here.
-                        I will assume standard CSS classes "desktop-menu" and "mobile-toggle" are controlled by media queries.
-                    */}
-                    <button onClick={() => setIsOpen(!isOpen)} className="text-2xl text-gray-800">
+                <div className="mobile-only" style={{}}>
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-2xl text-gray-800" style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.5rem', color: '#333' }}>
                         {isOpen ? <FaTimes /> : <FaBars />}
                     </button>
                 </div>
