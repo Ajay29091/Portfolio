@@ -156,6 +156,11 @@ button {
     .hero-container {
         min-height: auto !important;
     }
+
+    .hero-dots {
+        bottom: -20px !important;
+        left: -2px !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -194,10 +199,15 @@ button {
 /* Hero Layout Defaults */
 .hero-section {
     min-height: 100vh;
-    padding-top: 80px;
+    padding-top: 50px;
     padding-bottom: 40px;
 }
 
 .hero-container {
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 50px);
+}
+
+.hero-dots {
+    bottom: 20px;
+    left: 20px;
 }

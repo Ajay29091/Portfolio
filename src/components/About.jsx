@@ -43,7 +43,7 @@ const About = () => {
                             <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: '#666' }}>Technologies</span>
                         </div>
                         <div style={{ textAlign: 'center' }}>
-                            <span style={{ display: 'block', fontSize: '2.5rem', fontWeight: '700', color: 'var(--accent-color)' }}>3+</span>
+                            <span style={{ display: 'block', fontSize: '2.5rem', fontWeight: '700', color: 'var(--accent-color)' }}>1+</span>
                             <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: '#666' }}>Projects</span>
                         </div>
                     </motion.div>

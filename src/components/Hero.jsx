@@ -16,7 +16,7 @@ const Hero = () => {
                         className="col-12 col-md-6 order-2 order-md-1 text-center text-md-start"
                         style={{ zIndex: 10 }}
                     >
-                        <span className="d-block fw-medium mb-2 text-primary hero-greeting" style={{ color: '#A67B5B' }}>
+                        <span className="d-block fw-medium mb-2 hero-greeting" style={{ color: '#1A1A1A' }}>
                             Hello, I'm
                         </span>
                         <h1 className="fw-bold mb-3 hero-title" style={{ color: '#1A1A1A', lineHeight: 1.1 }}>
@@ -75,10 +75,10 @@ const Hero = () => {
                                 }}
                             />
                             {/* Decorative Dots */}
-                            <div style={{
+                            <div className="hero-dots" style={{
                                 position: 'absolute', width: '100px', height: '100px',
                                 backgroundImage: 'radial-gradient(#A67B5B 2px, transparent 2px)', backgroundSize: '15px 15px',
-                                bottom: '20px', left: '20px', opacity: 0.3
+                                opacity: 0.3
                             }} />
                         </div>
                     </motion.div>

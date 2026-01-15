@@ -50,92 +50,98 @@ const Contact = () => {
                     Get In Touch
                 </motion.h2>
 
-                <div style={{
-                    display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '50px',
-                    backgroundColor: 'var(--bg-card)', padding: '50px', borderRadius: '15px', boxShadow: 'var(--shadow-soft)'
-                }} className="contact-container">
+                <div className="contact-container" style={{
+                    backgroundColor: 'var(--bg-card)', padding: '40px', borderRadius: '15px', boxShadow: 'var(--shadow-soft)'
+                }}>
+                    <div className="row g-5 align-items-center">
+                        {/* Contact Info */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="col-12 col-md-5"
+                        >
+                            <h3 className="fw-bold mb-4" style={{ fontSize: '1.8rem' }}>Let's Connect</h3>
+                            <p className="text-secondary mb-4" style={{ fontSize: '1.1rem' }}>I am open to opportunities for Data Engineering roles. Feel free to reach out!</p>
 
-                    {/* Contact Info */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-                    >
-                        <h3 style={{ fontSize: '1.5rem', marginBottom: '20px' }}>Let's Connect</h3>
-                        <p style={{ marginBottom: '30px', color: '#666' }}>I am open to opportunities for Data Engineering roles. Feel free to reach out!</p>
+                            <div className="d-flex flex-column gap-3 mb-5">
+                                <a href={`mailto:${personalDetails.email}`} className="d-flex align-items-center gap-3 text-decoration-none" style={{ fontSize: '1.1rem', color: 'var(--text-primary)' }}>
+                                    <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'rgba(166, 123, 91, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <FaEnvelope style={{ color: 'var(--accent-color)' }} />
+                                    </div>
+                                    {personalDetails.email}
+                                </a>
+                                <a href={`tel:${personalDetails.phone}`} className="d-flex align-items-center gap-3 text-decoration-none" style={{ fontSize: '1.1rem', color: 'var(--text-primary)' }}>
+                                    <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'rgba(166, 123, 91, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <FaPhone style={{ color: 'var(--accent-color)' }} />
+                                    </div>
+                                    {personalDetails.phone}
+                                </a>
+                            </div>
 
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                            <a href={`mailto:${personalDetails.email}`} style={{ display: 'flex', alignItems: 'center', gap: '15px', fontSize: '1.1rem', color: 'var(--text-primary)' }}>
-                                <FaEnvelope style={{ color: 'var(--accent-color)' }} /> {personalDetails.email}
-                            </a>
-                            <a href={`tel:${personalDetails.phone}`} style={{ display: 'flex', alignItems: 'center', gap: '15px', fontSize: '1.1rem', color: 'var(--text-primary)' }}>
-                                <FaPhone style={{ color: 'var(--accent-color)' }} /> {personalDetails.phone}
-                            </a>
-                        </div>
+                            <div className="d-flex gap-3">
+                                {personalDetails.social.map((social, idx) => (
+                                    <a key={idx} href={social.url} target="_blank" rel="noopener noreferrer"
+                                        className="social-icon"
+                                        style={{
+                                            width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'var(--bg-secondary)',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)', fontSize: '1.4rem',
+                                            transition: 'all 0.3s ease'
+                                        }}
+                                        onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--accent-color)'; e.currentTarget.style.color = '#fff'; }}
+                                        onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-secondary)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
+                                    >
+                                        <social.icon />
+                                    </a>
+                                ))}
+                            </div>
+                        </motion.div>
 
-                        <div style={{ marginTop: '40px', display: 'flex', gap: '20px' }}>
-                            {personalDetails.social.map((social, idx) => (
-                                <a key={idx} href={social.url} target="_blank" rel="noopener noreferrer"
+                        {/* Contact Form */}
+                        <div className="col-12 col-md-7">
+                            <motion.form
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                onSubmit={handleSubmit}
+                                className="d-flex flex-column gap-3"
+                            >
+                                {/* Hidden Inputs for FormSubmit Configuration */}
+                                <input type="hidden" name="_subject" value="New Portfolio Contact Message!" />
+                                <input type="hidden" name="_template" value="table" />
+                                <input type="hidden" name="_captcha" value="false" />
+
+                                <input
+                                    type="text" name="name" placeholder="Your Name" required
+                                    className="form-control"
+                                    style={{ padding: '15px', borderRadius: '8px', border: '1px solid #eee', fontSize: '1rem', backgroundColor: '#fafafa' }}
+                                />
+                                <input
+                                    type="email" name="email" placeholder="Your Email" required
+                                    className="form-control"
+                                    style={{ padding: '15px', borderRadius: '8px', border: '1px solid #eee', fontSize: '1rem', backgroundColor: '#fafafa' }}
+                                />
+                                <textarea
+                                    name="message" placeholder="Your Message" rows="5" required
+                                    className="form-control"
+                                    style={{ padding: '15px', borderRadius: '8px', border: '1px solid #eee', fontSize: '1rem', backgroundColor: '#fafafa', resize: 'vertical' }}
+                                ></textarea>
+
+                                <button
+                                    type="submit"
+                                    disabled={status === 'sending'}
+                                    className="btn btn-primary w-100 py-3 fw-bold mt-2"
                                     style={{
-                                        width: '45px', height: '45px', borderRadius: '50%', backgroundColor: 'var(--bg-secondary)',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)', fontSize: '1.2rem',
+                                        backgroundColor: status === 'success' ? '#4CAF50' : status === 'error' ? '#f44336' : 'var(--accent-color)',
+                                        borderColor: status === 'success' ? '#4CAF50' : status === 'error' ? '#f44336' : 'var(--accent-color)',
                                         transition: 'all 0.3s ease'
                                     }}
-                                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--accent-color)'; e.currentTarget.style.color = '#fff'; }}
-                                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-secondary)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
                                 >
-                                    <social.icon />
-                                </a>
-                            ))}
+                                    {status === 'sending' ? 'Sending...' : status === 'success' ? 'Message Sent!' : status === 'error' ? 'Failed, Try Later' : 'Send Message'}
+                                </button>
+                            </motion.form>
                         </div>
-                    </motion.div>
-
-                    {/* Contact Form */}
-                    <motion.form
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        onSubmit={handleSubmit}
-                        style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-                    >
-                        {/* Hidden Inputs for FormSubmit Configuration */}
-                        <input type="hidden" name="_subject" value="New Portfolio Contact Message!" />
-                        <input type="hidden" name="_template" value="table" />
-                        <input type="hidden" name="_captcha" value="false" />
-
-                        <input
-                            type="text" name="name" placeholder="Your Name" required
-                            style={{ padding: '15px', borderRadius: '5px', border: '1px solid #ddd', fontSize: '1rem', outline: 'none' }}
-                            onFocus={(e) => e.target.style.borderColor = 'var(--accent-color)'}
-                            onBlur={(e) => e.target.style.borderColor = '#ddd'}
-                        />
-                        <input
-                            type="email" name="email" placeholder="Your Email" required
-                            style={{ padding: '15px', borderRadius: '5px', border: '1px solid #ddd', fontSize: '1rem', outline: 'none' }}
-                            onFocus={(e) => e.target.style.borderColor = 'var(--accent-color)'}
-                            onBlur={(e) => e.target.style.borderColor = '#ddd'}
-                        />
-                        <textarea
-                            name="message" placeholder="Your Message" rows="5" required
-                            style={{ padding: '15px', borderRadius: '5px', border: '1px solid #ddd', fontSize: '1rem', outline: 'none', resize: 'vertical' }}
-                            onFocus={(e) => e.target.style.borderColor = 'var(--accent-color)'}
-                            onBlur={(e) => e.target.style.borderColor = '#ddd'}
-                        ></textarea>
-
-                        <button
-                            type="submit"
-                            disabled={status === 'sending'}
-                            style={{
-                                padding: '15px', borderRadius: '5px', border: 'none', fontSize: '1rem', fontWeight: '600',
-                                backgroundColor: status === 'success' ? '#4CAF50' : status === 'error' ? '#f44336' : 'var(--accent-color)',
-                                color: 'white', cursor: status === 'sending' ? 'not-allowed' : 'pointer',
-                                transition: 'background-color 0.3s ease'
-                            }}
-                        >
-                            {status === 'sending' ? 'Sending...' : status === 'success' ? 'Message Sent!' : status === 'error' ? 'Failed, Try Later' : 'Send Message'}
-                        </button>
-                    </motion.form>
+                    </div>
                 </div>
             </div>
         </section>
