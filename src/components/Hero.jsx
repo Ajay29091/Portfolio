@@ -16,32 +16,35 @@ const Hero = () => {
                         className="col-12 col-md-6 order-2 order-md-1 text-center text-md-start"
                         style={{ zIndex: 10 }}
                     >
-                        <span className="d-block fw-medium mb-2 hero-greeting" style={{ color: '#1A1A1A' }}>
+                        <span className="d-block fw-medium mb-2 hero-greeting" style={{ color: 'var(--text-primary)' }}>
                             Hello, I'm
                         </span>
-                        <h1 className="fw-bold mb-3 hero-title" style={{ color: '#1A1A1A', lineHeight: 1.1 }}>
+                        <h1 className="fw-bold mb-3 hero-title" style={{ color: 'var(--text-primary)', lineHeight: 1.1 }}>
                             {personalDetails.name}
                         </h1>
-                        <h2 className="hero-subtitle fw-normal text-secondary mb-4">
+                        <h2 className="hero-subtitle fw-normal mb-4" style={{ color: 'var(--text-secondary)' }}>
                             {personalDetails.role}
                         </h2>
-                        <p className="lead text-muted mb-4 mx-auto mx-md-0" style={{ maxWidth: '480px', lineHeight: '1.6', fontSize: '1.1rem' }}>
+                        <p className="lead mb-4 mx-auto mx-md-0" style={{ maxWidth: '480px', lineHeight: '1.6', fontSize: '1.1rem', color: 'var(--text-tertiary)' }}>
                             {personalDetails.tagline}
                         </p>
                         <div className="d-flex gap-3 flex-wrap justify-content-center justify-content-md-start hero-buttons">
                             <a href="#projects" className="btn btn-primary"
                                 style={{
-                                    backgroundColor: '#A67B5B',
-                                    borderColor: '#A67B5B',
+                                    backgroundColor: 'var(--accent-color)',
+                                    borderColor: 'var(--accent-color)',
                                     padding: '12px 32px',
-                                    fontWeight: '500'
+                                    fontWeight: '500',
+                                    color: '#fff'
                                 }}>
                                 View Projects
                             </a>
                             <a href="/Ajay_Singh_s_Resume.pdf" download className="btn btn-outline-dark"
                                 style={{
                                     padding: '12px 32px',
-                                    fontWeight: '500'
+                                    fontWeight: '500',
+                                    color: 'var(--text-primary)',
+                                    borderColor: 'var(--text-primary)'
                                 }}>
                                 Download Resume
                             </a>
@@ -61,7 +64,7 @@ const Hero = () => {
                                 transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
                                 style={{
                                     position: 'absolute', width: '75%', height: '75%',
-                                    backgroundColor: 'rgba(166, 123, 91, 0.1)', borderRadius: '50%',
+                                    backgroundColor: 'var(--accent-color)', opacity: 0.1, borderRadius: '50%',
                                     top: '50%', left: '50%', transform: 'translate(-50%, -50%)'
                                 }}
                             />
@@ -70,14 +73,14 @@ const Hero = () => {
                                 transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
                                 style={{
                                     position: 'absolute', width: '45%', height: '45%',
-                                    border: '2px solid #A67B5B', borderRadius: '50%',
+                                    border: '2px solid var(--accent-color)', borderRadius: '50%',
                                     top: '40%', left: '60%', opacity: 0.6
                                 }}
                             />
                             {/* Decorative Dots */}
                             <div className="hero-dots" style={{
                                 position: 'absolute', width: '100px', height: '100px',
-                                backgroundImage: 'radial-gradient(#A67B5B 2px, transparent 2px)', backgroundSize: '15px 15px',
+                                backgroundImage: 'radial-gradient(var(--accent-color) 2px, transparent 2px)', backgroundSize: '15px 15px',
                                 opacity: 0.3
                             }} />
                         </div>

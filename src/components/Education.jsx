@@ -15,7 +15,7 @@ const Education = () => {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            style={{ fontSize: '2rem', marginBottom: '30px', fontWeight: '700', color: 'var(--heading-color)', display: 'flex', alignItems: 'center', gap: '15px' }}
+                            style={{ fontSize: '2rem', marginBottom: '30px', fontWeight: '700', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '15px' }}
                         >
                             <FaGraduationCap style={{ color: 'var(--accent-color)' }} /> Education
                         </motion.h2>
@@ -31,8 +31,8 @@ const Education = () => {
                                     style={{ backgroundColor: 'var(--bg-card)', padding: '25px', borderRadius: '10px', boxShadow: 'var(--shadow-soft)' }}
                                 >
                                     <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{edu.degree}</h3>
-                                    <h4 style={{ fontSize: '1rem', color: '#555', marginBottom: '5px' }}>{edu.school}</h4>
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#888' }}>
+                                    <h4 style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '5px' }}>{edu.school}</h4>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: 'var(--text-tertiary)' }}>
                                         <span>{edu.period}</span>
                                     </div>
                                 </motion.div>
@@ -46,7 +46,7 @@ const Education = () => {
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            style={{ fontSize: '2rem', marginBottom: '30px', fontWeight: '700', color: 'var(--heading-color)', display: 'flex', alignItems: 'center', gap: '15px' }}
+                            style={{ fontSize: '2rem', marginBottom: '30px', fontWeight: '700', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '15px' }}
                         >
                             <FaCertificate style={{ color: 'var(--accent-color)' }} /> Certifications
                         </motion.h2>
@@ -73,7 +73,7 @@ const Education = () => {
                                     </div>
                                     <div>
                                         <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '5px' }}>{cert.title}</h3>
-                                        <p style={{ fontSize: '0.9rem', color: '#666' }}>{cert.issuer} | <span style={{ color: '#888' }}>{cert.date}</span></p>
+                                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{cert.issuer} | <span style={{ color: 'var(--text-tertiary)' }}>{cert.date}</span></p>
                                     </div>
                                 </motion.div>
                             ))}

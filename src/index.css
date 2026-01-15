@@ -3,11 +3,9 @@
 :root {
     --font-primary: 'Outfit', sans-serif;
 
-    /* Warm Studio Palette */
+    /* Warm Studio Palette (Light Default) */
     --bg-primary: #FAF9F6;
-    /* Warm Off-white */
     --bg-secondary: #F2F0EB;
-    /* Slightly Darker Beige */
     --bg-card: #FFFFFF;
 
     --text-primary: #333333;
@@ -15,11 +13,44 @@
     --text-tertiary: #888888;
 
     --accent-color: #A67B5B;
-    /* Warm Earthy Brown/Gold */
     --accent-hover: #8C6246;
 
     --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
     --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme='dark'] {
+    /* Warm Dark Studio Palette */
+    --bg-primary: #1A1918;
+    /* Deep warm charcoal */
+    --bg-secondary: #242220;
+    /* Slightly lighter warm dark */
+    --bg-card: #2D2B29;
+    /* Card background */
+
+    --text-primary: #EAE6E1;
+    /* Warm off-white */
+    --text-secondary: #ACA69F;
+    /* Warm gray */
+    --text-tertiary: #75716E;
+
+    --accent-color: #BFA086;
+    /* Lighter warm earth tone for dark mode */
+    --accent-hover: #A67B5B;
+
+    --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme='dark'] .form-control::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+[data-theme='dark'] .form-control {
+    background-color: var(--bg-primary);
+    border-color: var(--bg-secondary);
+    color: var(--text-primary);
 }
 
 * {

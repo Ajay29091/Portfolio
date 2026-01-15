@@ -40,7 +40,7 @@ const Skills = () => {
                                 e.currentTarget.style.borderColor = 'transparent';
                             }}
                         >
-                            <h3 style={{ fontSize: '1.2rem', marginBottom: '20px', color: 'var(--text-primary)', borderBottom: '1px solid #eee', paddingBottom: '10px' }}>
+                            <h3 style={{ fontSize: '1.2rem', marginBottom: '20px', color: 'var(--text-primary)', borderBottom: '1px solid var(--bg-secondary)', paddingBottom: '10px' }}>
                                 {skillGroup.category}
                             </h3>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px' }}>

@@ -36,15 +36,15 @@ const About = () => {
                     >
                         <div style={{ textAlign: 'center' }}>
                             <span style={{ display: 'block', fontSize: '2.5rem', fontWeight: '700', color: 'var(--accent-color)' }}>6+</span>
-                            <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: '#666' }}>Months Exp</span>
+                            <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-tertiary)' }}>Months Exp</span>
                         </div>
                         <div style={{ textAlign: 'center' }}>
                             <span style={{ display: 'block', fontSize: '2.5rem', fontWeight: '700', color: 'var(--accent-color)' }}>5+</span>
-                            <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: '#666' }}>Technologies</span>
+                            <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-tertiary)' }}>Technologies</span>
                         </div>
                         <div style={{ textAlign: 'center' }}>
                             <span style={{ display: 'block', fontSize: '2.5rem', fontWeight: '700', color: 'var(--accent-color)' }}>1+</span>
-                            <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: '#666' }}>Projects</span>
+                            <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-tertiary)' }}>Projects</span>
                         </div>
                     </motion.div>
                 </div>

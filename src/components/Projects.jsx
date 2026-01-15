@@ -27,7 +27,8 @@ const Projects = () => {
                                 style={{
                                     backgroundColor: 'var(--bg-card)',
                                     borderRadius: '12px',
-                                    transition: 'transform 0.3s ease'
+                                    transition: 'transform 0.3s ease',
+                                    color: 'var(--text-primary)'
                                 }}
                                 onMouseEnter={(e) => {
                                     e.currentTarget.style.transform = 'translateY(-5px)';
@@ -41,7 +42,7 @@ const Projects = () => {
                                 <div className="card-body p-4">
                                     <div className="d-flex justify-content-between align-items-start mb-3">
                                         <h3 className="card-title h4 fw-bold mb-0">{project.title}</h3>
-                                        <span className="text-secondary small text-nowrap">{project.date}</span>
+                                        <span className="small text-nowrap" style={{ color: 'var(--text-secondary)' }}>{project.date}</span>
                                     </div>
 
                                     <div className="d-flex flex-wrap gap-2 mb-3">
@@ -58,17 +59,17 @@ const Projects = () => {
                                     </div>
 
                                     <div className="mb-3 p-3 rounded" style={{
-                                        backgroundColor: '#fdfdfd',
+                                        backgroundColor: 'var(--bg-secondary)',
                                         borderLeft: '3px solid var(--accent-color)',
                                         fontStyle: 'italic',
-                                        color: '#555'
+                                        color: 'var(--text-secondary)'
                                     }}>
                                         <p className="mb-0 card-text">{project.description}</p>
                                     </div>
 
                                     <ul className="list-unstyled mb-0">
                                         {project.highlights.map((highlight, idx) => (
-                                            <li key={idx} className="position-relative ps-4 mb-2 text-secondary small">
+                                            <li key={idx} className="position-relative ps-4 mb-2 small" style={{ color: 'var(--text-secondary)' }}>
                                                 <span className="position-absolute start-0 fw-bold" style={{ color: 'var(--accent-color)' }}>✓</span>
                                                 {highlight}
                                             </li>

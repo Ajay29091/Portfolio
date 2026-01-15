@@ -114,17 +114,17 @@ const Contact = () => {
                                 <input
                                     type="text" name="name" placeholder="Your Name" required
                                     className="form-control"
-                                    style={{ padding: '15px', borderRadius: '8px', border: '1px solid #eee', fontSize: '1rem', backgroundColor: '#fafafa' }}
+                                    style={{ padding: '15px', borderRadius: '8px', border: '1px solid var(--bg-secondary)', fontSize: '1rem', backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}
                                 />
                                 <input
                                     type="email" name="email" placeholder="Your Email" required
                                     className="form-control"
-                                    style={{ padding: '15px', borderRadius: '8px', border: '1px solid #eee', fontSize: '1rem', backgroundColor: '#fafafa' }}
+                                    style={{ padding: '15px', borderRadius: '8px', border: '1px solid var(--bg-secondary)', fontSize: '1rem', backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}
                                 />
                                 <textarea
                                     name="message" placeholder="Your Message" rows="5" required
                                     className="form-control"
-                                    style={{ padding: '15px', borderRadius: '8px', border: '1px solid #eee', fontSize: '1rem', backgroundColor: '#fafafa', resize: 'vertical' }}
+                                    style={{ padding: '15px', borderRadius: '8px', border: '1px solid var(--bg-secondary)', fontSize: '1rem', backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)', resize: 'vertical' }}
                                 ></textarea>
 
                                 <button

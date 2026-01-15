@@ -18,7 +18,7 @@ const Experience = () => {
 
                 <div className="timeline-container" style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
                     {/* Vertical Line */}
-                    <div style={{ position: 'absolute', left: '20px', top: 0, bottom: 0, width: '2px', background: '#ddd' }}></div>
+                    <div style={{ position: 'absolute', left: '20px', top: 0, bottom: 0, width: '2px', background: 'var(--bg-secondary)' }}></div>
 
                     {experience.map((job, index) => (
                         <motion.div
@@ -40,11 +40,11 @@ const Experience = () => {
                             </div>
 
                             <h3 style={{ fontSize: '1.4rem', fontWeight: 'bold', color: 'var(--text-primary)' }}>{job.role}</h3>
-                            <h4 style={{ fontSize: '1.1rem', fontWeight: '500', marginBottom: '10px', color: '#555' }}>
-                                {job.company} <span style={{ fontSize: '0.9rem', color: '#888', fontWeight: 'normal' }}>| {job.type}</span>
+                            <h4 style={{ fontSize: '1.1rem', fontWeight: '500', marginBottom: '10px', color: 'var(--text-secondary)' }}>
+                                {job.company} <span style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)', fontWeight: 'normal' }}>| {job.type}</span>
                             </h4>
 
-                            <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#666', marginBottom: '15px', fontSize: '0.9rem' }}>
+                            <p style={{ display: 'flex', alignItems: 'center', gap: '5px', color: 'var(--text-secondary)', marginBottom: '15px', fontSize: '0.9rem' }}>
                                 <FaMapMarkerAlt /> {job.location}
                             </p>
 
