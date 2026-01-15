@@ -5,7 +5,7 @@ import { personalDetails } from '../data';
 const Hero = () => {
     return (
         <section id="hero" style={{ height: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: '80px' }}>
-            <div className="max-w-7xl mx-auto px-6 w-full reverse-stack-on-mobile"
+            <div className="max-w-7xl mx-auto px-6 w-full stack-on-mobile"
                 style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px', display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'space-between' }}>
 
                 <motion.div
@@ -13,21 +13,21 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="flex-1 text-center md:text-left"
-                    style={{ flex: 1, maxWidth: '600px' }}
+                    style={{ flex: 1, maxWidth: '600px', zIndex: 10 }} // zIndex to ensure text is engaging
                 >
-                    <span style={{ display: 'block', fontSize: '1.2rem', fontWeight: '500', color: '#A67B5B', marginBottom: '10px' }}>
+                    <span className="hero-greeting" style={{ display: 'block', fontWeight: '500', color: '#A67B5B', marginBottom: '10px' }}>
                         Hello, I'm
                     </span>
-                    <h1 style={{ fontSize: '4rem', fontWeight: '700', lineHeight: 1.1, marginBottom: '15px', color: '#1A1A1A' }}>
+                    <h1 className="hero-title" style={{ fontWeight: '700', lineHeight: 1.1, marginBottom: '15px', color: '#1A1A1A' }}>
                         {personalDetails.name}
                     </h1>
-                    <h2 style={{ fontSize: '2rem', fontWeight: '400', color: '#555', marginBottom: '20px' }}>
+                    <h2 className="hero-subtitle" style={{ fontWeight: '400', color: '#555', marginBottom: '20px' }}>
                         {personalDetails.role}
                     </h2>
-                    <p style={{ fontSize: '1.1rem', color: '#666', marginBottom: '35px', maxWidth: '480px', lineHeight: '1.6' }}>
+                    <p style={{ fontSize: '1.1rem', color: '#666', marginBottom: '35px', maxWidth: '480px', lineHeight: '1.6', marginLight: 'auto', marginRight: 'auto' }} className="md:mx-0">
                         {personalDetails.tagline}
                     </p>
-                    <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center' }} className="hero-buttons">
                         <a href="#projects"
                             style={{ backgroundColor: '#A67B5B', color: 'white', padding: '14px 32px', borderRadius: '5px', fontWeight: '500', border: '2px solid #A67B5B' }}>
                             View Projects
@@ -47,7 +47,7 @@ const Hero = () => {
                     className="flex-1 flex justify-center relative"
                     style={{ flex: 1, display: 'flex', justifyContent: 'center', position: 'relative' }}
                 >
-                    <div style={{ width: '400px', height: '400px', maxWidth: '100%', position: 'relative', marginTop: '-50px' }}>
+                    <div className="hero-visual-container" style={{ position: 'relative' }}>
                         <motion.div
                             animate={{ y: [0, -20, 0] }}
                             transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}

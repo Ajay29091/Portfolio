@@ -124,6 +124,40 @@ button {
         margin-bottom: 2rem;
     }
 
+    /* Hero Responsive Styles */
+    .hero-title {
+        font-size: 2.8rem !important;
+        /* Smaller on mobile */
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem !important;
+        text-align: center;
+    }
+
+    .hero-greeting {
+        font-size: 1rem !important;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center !important;
+    }
+
+    .hero-buttons a {
+        padding: 12px 24px !important;
+        font-size: 0.9rem !important;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-visual-container {
+        width: 300px !important;
+        height: 300px !important;
+        margin-top: 20px;
+    }
+
     .desktop-only {
         display: none !important;
     }
@@ -166,4 +200,31 @@ button {
     .section-title {
         font-size: 1.5rem;
     }
+
+    .hero-title {
+        font-size: 2.2rem !important;
+    }
+
+    .hero-visual-container {
+        width: 250px !important;
+        height: 250px !important;
+    }
+}
+
+/* Base Styles for Hero classes (Desktop defaults) */
+.hero-title {
+    font-size: 4rem;
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+}
+
+.hero-greeting {
+    font-size: 1.2rem;
+}
+
+.hero-visual-container {
+    width: 400px;
+    height: 400px;
 }
