@@ -23,50 +23,52 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}
+        <nav className={`fixed-top transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'}`}
             style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                width: '100%',
-                zIndex: 1000,
-                background: scrolled ? 'rgba(250, 249, 246, 0.95)' : 'transparent',
+                transition: 'all 0.3s ease',
+                backgroundColor: scrolled ? 'rgba(250, 249, 246, 0.95)' : 'transparent',
                 boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.05)' : 'none',
-                padding: scrolled ? '15px 0' : '25px 0',
-                transition: 'all 0.3s ease'
+                height: scrolled ? '70px' : '90px',
+                display: 'flex',
+                alignItems: 'center'
             }}>
-            <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                <a href="#" className="text-2xl font-bold text-gray-800" style={{ fontSize: '1.5rem', fontWeight: '700', color: '#333' }}>
+            <div className="container d-flex justify-content-between align-items-center">
+                <a href="#" className="navbar-brand text-2xl font-bold text-gray-800" style={{ fontSize: '1.5rem', fontWeight: '700', color: '#333' }}>
                     Ajay
                 </a>
 
                 {/* Desktop Menu */}
-                <div className="desktop-only items-center space-x-8" style={{ gap: '30px' }}>
-                    <ul style={{ display: 'flex', gap: '30px' }}>
+                <div className="d-none d-md-flex align-items-center gap-4">
+                    <ul className="d-flex gap-4 m-0 p-0" style={{ listStyle: 'none' }}>
                         {navLinks.map((link) => (
                             <li key={link.name}>
-                                <a href={link.href} className="text-sm font-medium text-gray-600 hover:text-accent transition-colors"
-                                    style={{ fontWeight: '500', fontSize: '0.95rem', color: '#555' }}>
+                                <a href={link.href} className="text-decoration-none text-secondary fw-bold"
+                                    style={{ fontSize: '0.95rem', transition: 'color 0.2s' }}
+                                    onMouseEnter={(e) => e.target.style.color = '#A67B5B'}
+                                    onMouseLeave={(e) => e.target.style.color = '#555'}>
                                     {link.name}
                                 </a>
                             </li>
                         ))}
                     </ul>
-                    <a href="/Ajay_Singh_s_Resume.pdf" download className="px-5 py-2 border border-accent text-accent rounded hover:bg-accent hover:text-white transition-all"
+                    <a href="/Ajay_Singh_s_Resume.pdf" download className="btn btn-outline-primary"
                         style={{
-                            border: '1px solid #A67B5B',
+                            borderColor: '#A67B5B',
+                            color: '#A67B5B',
+                            fontWeight: '500',
                             padding: '8px 20px',
                             borderRadius: '4px',
-                            color: '#A67B5B',
-                            fontWeight: '500'
+                            '--bs-btn-hover-bg': '#A67B5B',
+                            '--bs-btn-hover-border-color': '#A67B5B',
+                            '--bs-btn-hover-color': 'white'
                         }}>
                         Resume
                     </a>
                 </div>
 
                 {/* Mobile Hamburger */}
-                <div className="mobile-only" style={{}}>
-                    <button onClick={() => setIsOpen(!isOpen)} className="text-2xl text-gray-800" style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.5rem', color: '#333' }}>
+                <div className="d-md-none">
+                    <button onClick={() => setIsOpen(!isOpen)} className="btn btn-link link-dark text-decoration-none p-0" style={{ fontSize: '1.5rem' }}>
                         {isOpen ? <FaTimes /> : <FaBars />}
                     </button>
                 </div>
@@ -79,18 +81,23 @@ const Navbar = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-full left-0 w-full bg-white shadow-lg py-6 px-6 flex flex-col space-y-4 md:hidden"
-                        style={{ position: 'absolute', top: '100%', left: 0, width: '100%', background: 'white', padding: '20px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
+                        className="position-absolute top-100 start-0 w-100 bg-white shadow-lg p-4 d-flex flex-column gap-3 d-md-none"
+                        style={{ borderTop: '1px solid #eee' }}
                     >
                         {navLinks.map((link) => (
                             <a key={link.name} href={link.href} onClick={() => setIsOpen(false)}
-                                className="block text-lg font-medium text-gray-700 py-2"
-                                style={{ display: 'block', padding: '10px 0', color: '#333' }}>
+                                className="text-decoration-none text-dark fw-bold py-2 border-bottom"
+                                style={{ fontSize: '1.1rem' }}>
                                 {link.name}
                             </a>
                         ))}
-                        <a href="/Ajay_Singh_s_Resume.pdf" download className="block w-full text-center py-3 bg-accent text-white rounded mt-4"
-                            style={{ display: 'block', textAlign: 'center', padding: '12px', background: '#A67B5B', color: 'white', borderRadius: '4px', marginTop: '10px' }}>
+                        <a href="/Ajay_Singh_s_Resume.pdf" download className="btn w-100 mt-2"
+                            style={{
+                                backgroundColor: '#A67B5B',
+                                color: 'white',
+                                padding: '12px',
+                                fontWeight: '500'
+                            }}>
                             Download Resume
                         </a>
                     </motion.div>

@@ -114,20 +114,16 @@ button {
     }
 }
 
+/* Custom overwrites for mobile if needed, but relying on Bootstrap for layout */
+/* Custom overwrites for mobile functionality */
 @media (max-width: 768px) {
     .section-padding {
         padding: 60px 20px;
     }
 
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
-    }
-
-    /* Hero Responsive Styles */
+    /* Hero Responsive Typography & Sizing */
     .hero-title {
-        font-size: 2.8rem !important;
-        /* Smaller on mobile */
+        font-size: 2.5rem !important;
         text-align: center;
     }
 
@@ -141,54 +137,24 @@ button {
         text-align: center;
     }
 
-    .hero-buttons {
-        justify-content: center !important;
-    }
-
-    .hero-buttons a {
-        padding: 12px 24px !important;
-        font-size: 0.9rem !important;
-        width: 100%;
-        text-align: center;
-    }
-
     .hero-visual-container {
-        width: 300px !important;
-        height: 300px !important;
-        margin-top: 20px;
+        width: 280px !important;
+        height: 280px !important;
+        margin-top: 0;
     }
 
-    .desktop-only {
-        display: none !important;
+    .mobile-visual-adjust {
+        margin-top: -6rem !important;
     }
 
-    .mobile-only {
-        display: block !important;
+    .hero-section {
+        min-height: auto !important;
+        padding-top: 80px !important;
+        padding-bottom: 2rem !important;
     }
 
-    /* Layout Adjustments */
-    .stack-on-mobile {
-        flex-direction: column !important;
-    }
-
-    .reverse-stack-on-mobile {
-        flex-direction: column-reverse !important;
-    }
-
-    .grid-to-flex-mobile {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-
-    .contact-container {
-        display: flex !important;
-        flex-direction: column !important;
-        padding: 30px !important;
-        gap: 30px !important;
-    }
-
-    .timeline-item {
-        padding-left: 40px !important;
+    .hero-container {
+        min-height: auto !important;
     }
 }
 
@@ -197,17 +163,13 @@ button {
         padding: 40px 15px;
     }
 
-    .section-title {
-        font-size: 1.5rem;
-    }
-
     .hero-title {
-        font-size: 2.2rem !important;
+        font-size: 2rem !important;
     }
 
     .hero-visual-container {
-        width: 250px !important;
-        height: 250px !important;
+        width: 240px !important;
+        height: 240px !important;
     }
 }
 
@@ -227,4 +189,15 @@ button {
 .hero-visual-container {
     width: 400px;
     height: 400px;
+}
+
+/* Hero Layout Defaults */
+.hero-section {
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.hero-container {
+    min-height: calc(100vh - 80px);
 }
